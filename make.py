@@ -314,7 +314,8 @@ def help():
             first_line = doc.splitlines()[0]
         else:
             first_line = ""
-        print("make {} - {}".format(command, first_line))
+
+        print("langxm:make {} - {}".format(command, first_line))
 
 
 def main(command="help", *args):
@@ -326,6 +327,7 @@ def main(command="help", *args):
     except KeyError:
         raise RuntimeError("No such command: %s" % command)
     else:
+        print('langxm {}'.format(function.__name__))
         return function(*args)
 
 

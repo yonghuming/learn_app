@@ -13,13 +13,7 @@ PYGETTEXT = os.path.join(sys.base_prefix, "tools", "i18n", "pygettext.py")
 INCLUDE_PATTERNS = {
     "*.py"
 }
-EXCLUDE_PATTERNS = {
-    "build/*",
-    "docs/*",
-    "mu/contrib/*",
-    "mu/modes/api/*",
-    "utils/*",
-}
+EXCLUDE_PATTERNS = {}
 _exported = {}
 
 
@@ -144,6 +138,7 @@ def pyflakes(*pyflakes_args):
     """
     print("\npyflakes")
     os.environ["PYFLAKES_BUILTINS"] = "_"
+
     return _process_code(PYFLAKES, False, *pyflakes_args)
 
 
@@ -170,9 +165,9 @@ def check():
     print("\nCheck")
     funcs = [
         clean,
-        pyflakes,
-        pycodestyle,
-        coverage
+        # pyflakes,
+        # pycodestyle,
+        # coverage
     ]
     for func in funcs:
         return_code = func()

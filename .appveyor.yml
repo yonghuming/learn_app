@@ -43,7 +43,6 @@ install:
   # Check installed packages
   - cmd: pip freeze
   - cmd: python -c "import PyQt5"
-  - cmd: python -c "import PyQt5.Qsci"
 
   # Build mu using pynsist, rename dist folder and executable with timestamp
   # 64bit

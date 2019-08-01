@@ -35,6 +35,7 @@ def _walk(
         _include_patterns = set()
     if exclude_patterns:
         # _exclude_patterns = set(os.path.normpath(p) for p in exclude_patterns)
+        _exclude_patterns = set()
         pass
     else:
         _exclude_patterns = set()

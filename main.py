@@ -19,7 +19,9 @@ class Example(QMainWindow):
 
     def mousePressEvent(self, event):
         self.c.closeApp.emit()
-if __name__ == '__main__':
+def main():
     app = QApplication(sys.argv)
     ex = Example()
     sys.exit(app.exec_())
+if __name__ == '__main__':
+    main()

@@ -34,7 +34,8 @@ def _walk(
     else:
         _include_patterns = set()
     if exclude_patterns:
-        _exclude_patterns = set(os.path.normpath(p) for p in exclude_patterns)
+        # _exclude_patterns = set(os.path.normpath(p) for p in exclude_patterns)
+        pass
     else:
         _exclude_patterns = set()
 
@@ -68,12 +69,12 @@ def _process_code(executable, use_python, *args):
     for filepath in _walk(".", INCLUDE_PATTERNS, EXCLUDE_PATTERNS, False):
         p = subprocess.run(execution + [filepath] + list(args))
         returncodes.add(p.returncode)
-    for filepath in _walk("mu", INCLUDE_PATTERNS, EXCLUDE_PATTERNS):
-        p = subprocess.run(execution + [filepath] + list(args))
-        returncodes.add(p.returncode)
-    for filepath in _walk("tests", INCLUDE_PATTERNS, EXCLUDE_PATTERNS):
-        p = subprocess.run(execution + [filepath] + list(args))
-        returncodes.add(p.returncode)
+    # for filepath in _walk("mu", INCLUDE_PATTERNS, EXCLUDE_PATTERNS):
+    #     p = subprocess.run(execution + [filepath] + list(args))
+    #     returncodes.add(p.returncode)
+    # for filepath in _walk("tests", INCLUDE_PATTERNS, EXCLUDE_PATTERNS):
+    #     p = subprocess.run(execution + [filepath] + list(args))
+    #     returncodes.add(p.returncode)
     return max(returncodes)
 
 
@@ -327,7 +328,7 @@ def main(command="help", *args):
     except KeyError:
         raise RuntimeError("No such command: %s" % command)
     else:
-        print('langxm main {} {}'.format(function.__name__, *args))
+        print(*args)
         return function(*args)
 
 

@@ -68,6 +68,7 @@ def run(bitness):
     print('Unzipping {}.'.format(filename))
     unzip_file(filename)
     print('Running pynsist')
+    print('langxm:{}'.format(bitness))
     subprocess.call(['pynsist', 'win_installer{}.cfg'.format(bitness)])
 
 

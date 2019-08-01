@@ -51,7 +51,7 @@ install:
   - cmd: make win64
   - ps: Rename-Item -path .\build upload64
   - cmd: dir upload64\nsis
-  - ps: Rename-Item .\upload64\nsis\mu_1.0.2.exe mu_$(get-date -f yyyy-MM-dd_HH_mm)_$($env:APPVEYOR_REPO_BRANCH)_$($env:APPVEYOR_REPO_COMMIT.subString(0,7))_64bit.exe
+  - ps: Rename-Item .\upload64\nsis\Learn_app_1.0.2.exe Learn_app_$(get-date -f yyyy-MM-dd_HH_mm)_$($env:APPVEYOR_REPO_BRANCH)_$($env:APPVEYOR_REPO_COMMIT.subString(0,7))_64bit.exe
 
 # Not a project with an msbuild file, build done at install.
 build: None
@@ -61,8 +61,8 @@ test_script:
 
 # Push artifacts to s3 bucket and list all
 before_deploy:
-  - ps: Get-ChildItem .\upload64\nsis\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName mu-s3-deployment }
-  - ps: Get-ChildItem .\upload32\nsis\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName mu-s3-deployment }
+  - ps: Get-ChildItem .\upload64\nsis\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName Learn_app-s3-deployment }
+  - ps: Get-ChildItem .\upload32\nsis\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName Learn_app-s3-deployment }
   - ps: foreach($artifactName in $artifacts.keys) { $artifacts[$artifactName] }
 
 # Deploy build to Amazon S3 bucket

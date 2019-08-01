@@ -330,5 +330,7 @@ def main(command="help", *args):
 
 
 if __name__ == '__main__':
-    sys.exit(main(*sys.argv[1:]))
+    print('langxm:')
     print(*sys.argv[1:])
+    sys.exit(main(*sys.argv[1:]))
+

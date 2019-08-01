@@ -327,7 +327,7 @@ def main(command="help", *args):
     except KeyError:
         raise RuntimeError("No such command: %s" % command)
     else:
-        print('langxm {}'.format(function.__name__))
+        print('langxm main {} {}'.format(function.__name__, *args))
         return function(*args)
 
 

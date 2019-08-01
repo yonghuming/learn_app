@@ -331,3 +331,4 @@ def main(command="help", *args):
 
 if __name__ == '__main__':
     sys.exit(main(*sys.argv[1:]))
+    print(*sys.argv[1:])

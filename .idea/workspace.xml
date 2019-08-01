@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46a122f3-58d1-4e0b-a870-2d7cfb133541" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/make.py" beforeDir="false" afterPath="$PROJECT_DIR$/make.py" afterDir="false" />
-    </list>
+    <list default="true" id="46a122f3-58d1-4e0b-a870-2d7cfb133541" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1564645004861</updated>
       <workItem from="1564645006975" duration="11312000" />
-      <workItem from="1564660460881" duration="1554000" />
+      <workItem from="1564660460881" duration="2041000" />
     </task>
     <servers />
   </component>

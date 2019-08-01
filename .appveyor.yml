@@ -62,7 +62,6 @@ test_script:
 # Push artifacts to s3 bucket and list all
 before_deploy:
   - ps: Get-ChildItem .\upload64\nsis\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName Learn_app-s3-deployment }
-  - ps: Get-ChildItem .\upload32\nsis\*.exe | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name -DeploymentName Learn_app-s3-deployment }
   - ps: foreach($artifactName in $artifacts.keys) { $artifacts[$artifactName] }
 
 # Deploy build to Amazon S3 bucket

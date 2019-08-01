@@ -14,11 +14,11 @@ INCLUDE_PATTERNS = {
     "*.py"
 }
 EXCLUDE_PATTERNS = {
-    "build/*",
-    "docs/*",
-    "mu/contrib/*",
-    "mu/modes/api/*",
-    "utils/*",
+    # "build/*",
+    # "docs/*",
+    # "mu/contrib/*",
+    # "mu/modes/api/*",
+    # "utils/*",
 }
 _exported = {}
 
